@@ -11,6 +11,13 @@ ifeq ($(TARGET_BOARD_PLATFORM),mt6768)
   PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(CRYPTO_PATH)/mt6768,recovery/root)
 endif
 
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+# Drm
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4
+
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
