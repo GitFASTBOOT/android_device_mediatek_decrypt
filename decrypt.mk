@@ -1,3 +1,6 @@
+# Path
+CRYPTO_PATH := device/mediatek/decrypt
+
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
