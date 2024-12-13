@@ -1,6 +1,11 @@
 # Path
 CRYPTO_PATH := device/mediatek/decrypt
 
+# MT6833
+ifeq ($(TARGET_BOARD_PLATFORM),mt6833)
+  PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(CRYPTO_PATH)/mt6833,recovery/root)
+endif
+
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
