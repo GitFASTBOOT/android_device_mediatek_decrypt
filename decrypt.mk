@@ -11,6 +11,14 @@ ifeq ($(TARGET_BOARD_PLATFORM),mt6768)
   PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(CRYPTO_PATH)/mt6768,recovery/root)
 endif
 
+# Crypto
+TW_INCLUDE_CRYPTO_FBE           := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+BOARD_USES_METADATA_PARTITION   := true
+TW_USE_FSCRYPT_POLICY           := 2
+TW_FORCE_KEYMASTER_VER          := true
+TW_PREPARE_DATA_MEDIA_EARLY     := true
+
 # Keystore2
 PRODUCT_PACKAGES += \
     android.system.keystore2
